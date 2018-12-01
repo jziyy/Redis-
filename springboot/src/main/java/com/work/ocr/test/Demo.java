@@ -13,22 +13,21 @@ import java.io.IOException;
 
 public class Demo {
     public static void main(String[] args) throws IOException {
-        String path = "C:\\Users\\Administrator\\Desktop\\新建文件夹2";
+        String path = "C:\\Users\\Administrator\\Documents\\CoCall4\\16212@test\\recvfile\\金娟\\新处理图片文件";
         File file =new File(path);
-
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\BATQOCRDemo1127.txt"));
-
-        for (int i = 1; i < 62; i++) {
-
-            for (int j = 0; j < 2; j++) {
+        File[] files =file.listFiles();
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\BATQOCR原图20181130.txt"));
+        for (int i = 0; i < files.length; i++) {
+                String picName = files[i].getName();
+         //   for (int j = 0; j < 2; j++) {
 
                 String picturePath =file.getAbsolutePath();
 
-                if (j==0){
-                    picturePath = picturePath + "\\" + i + ".jpg";
-                }else {
-                    picturePath = picturePath + "\\" + i + "q.jpg";
-                }
+//                if (j==0){
+                  picturePath = picturePath + "\\" + picName;
+//                }else {
+//                    picturePath = picturePath + "\\" + i + "q.jpg";
+//                }
                 picturePath = PicDispose.picDispose(picturePath);
 
                 /**
@@ -54,6 +53,10 @@ public class Demo {
                 String qnOcr = Documentv2OCRRESTAPIDemo.getMessage(Documentv2OCRRESTAPIDemo.DocumentOCR(picturePath));
 
                 System.out.println(qnOcr);
+                bufferedWriter.write(picName);
+                bufferedWriter.flush();
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
                 bufferedWriter.write("qnOcr: " + qnOcr);
                 bufferedWriter.flush();
                 bufferedWriter.newLine();
@@ -79,7 +82,7 @@ public class Demo {
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
 
-            }
+          //  }
         }
         bufferedWriter.flush();
         bufferedWriter.close();

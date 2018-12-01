@@ -1,23 +1,24 @@
 package com.work.ocr.test;
 
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchOCRState {
     public static void main(String[] args) throws IOException {
       //  BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\Administrator\\Desktop\\aaaa.txt"));
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\项目\\springboot\\src\\main\\resources\\static\\batqOCR.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\项目\\springboot\\src\\main\\resources\\static\\newbatqyouhuaOCR.txt"));
       //  BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\aaaa2.txt"));
-        int bdOCRGoodCount = 0;
-        int alOCRGoodCount = 0;
-        int txOCRGoodCount = 0;
-        int qnOCRGoodCount = 0;
+        double bdOCRGoodCount = 0;
+        double alOCRGoodCount = 0;
+        double txOCRGoodCount = 0;
+        double qnOCRGoodCount = 0;
 
-        int bdOCRErrorCount = 0;
-        int alOCRErrorCount = 0;
-        int txOCRErrorCount = 0;
-        int qnOCRErrorCount = 0;
+        double bdOCRErrorCount = 0;
+        double alOCRErrorCount = 0;
+        double txOCRErrorCount = 0;
+        double qnOCRErrorCount = 0;
         StringBuilder bdstringBuilder =new StringBuilder(240);
         StringBuilder alstringBuilder =new StringBuilder(240);
         StringBuilder txstringBuilder =new StringBuilder(240);
@@ -32,12 +33,12 @@ public class SearchOCRState {
             /**
              * 百度
               */
-            if (str1.startsWith("yybdocr")) {
+            if (str1.startsWith("bdocr")) {
                 bdOCRGoodCount++;
                 bdstringBuilder.append(1);
                 bdstringBuilder.append(" ");
             }
-            if (str1.startsWith("0yybdocr")) {
+            if (str1.startsWith("0bdocr")) {
                 bdOCRErrorCount++;
                 bdstringBuilder.append(0);
                 bdstringBuilder.append(" ");
@@ -46,12 +47,12 @@ public class SearchOCRState {
             /**
              * 阿里
              */
-            if (str1.startsWith("yyalOcr")) {
+            if (str1.startsWith("alOcr")) {
                 alOCRGoodCount++;
                 alstringBuilder.append(1);
                 alstringBuilder.append(" ");
             }
-            if (str1.startsWith("0yyalOcr")) {
+            if (str1.startsWith("0alOcr")) {
                 alOCRErrorCount++;
                 alstringBuilder.append(0);
                 alstringBuilder.append(" ");
@@ -61,12 +62,12 @@ public class SearchOCRState {
             /**
              * 腾讯
              */
-            if (str1.startsWith("yytxOcr")) {
+            if (str1.startsWith("txOcr")) {
                 txOCRGoodCount++;
                 txstringBuilder.append(1);
                 txstringBuilder.append(" ");
             }
-            if (str1.startsWith("0yytxOcr")) {
+            if (str1.startsWith("0txOcr")) {
                 txOCRErrorCount++;
                 txstringBuilder.append(0);
                 txstringBuilder.append(" ");
@@ -75,12 +76,12 @@ public class SearchOCRState {
             /**
              * qn
              */
-            if (str1.startsWith("yyqnOcr")) {
+            if (str1.startsWith("qnOcr")) {
                 qnOCRGoodCount++;
                 qnstringBuilder.append(1);
                 qnstringBuilder.append(" ");
             }
-            if (str1.startsWith("0yyqnOcr")) {
+            if (str1.startsWith("0qnOcr")) {
                 qnOCRErrorCount++;
                 qnstringBuilder.append(0);
                 qnstringBuilder.append(" ");
@@ -97,7 +98,9 @@ public class SearchOCRState {
 //            bufferedWriter.flush();
         }
 
-
+        DecimalFormat decimalFormat = new DecimalFormat("00.00");
+        String accuracy = decimalFormat.format(bdOCRGoodCount/(bdOCRGoodCount + bdOCRErrorCount));
+        System.out.println("百度识别准确率 ： " + accuracy);
         System.out.println("百度OCR优秀数量： " + bdOCRGoodCount);
         System.out.println("阿里OCR优秀数量： " + alOCRGoodCount);
         System.out.println("腾讯OCR优秀数量： " + txOCRGoodCount);

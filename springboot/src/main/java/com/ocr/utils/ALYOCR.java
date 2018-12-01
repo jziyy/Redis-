@@ -21,7 +21,7 @@ public class ALYOCR {
         String host = "https://ocrapi-ugc.taobao.com";
         String path = "/ocrservice/ugc";
         String method = "POST";
-        String appcode = "e3b31739abf34a68ae69d4df6368c1a0";
+        String appcode = "05befdc7cd89469eb5db87504b3f50ed";
         Map<String, String> headers = new HashMap<String, String>();
         //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
         headers.put("Authorization", "APPCODE " + appcode);
