@@ -11,7 +11,7 @@ public class GetRemainFile {
             if (!files [i].getName().split("\\.")[0].matches(regex)){
                continue;
             }
-            FindSameName.copyFile(files[i].getAbsolutePath(),"E:\\work\\OCR\\aaa1");
+            FindSameName.copyFile(files[i].getAbsolutePath(),"E:\\work\\OCR\\1130\\aaa2");
         }
     }
 }

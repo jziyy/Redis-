@@ -8,7 +8,7 @@ import java.util.List;
 public class SearchOCRState {
     public static void main(String[] args) throws IOException {
       //  BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\Administrator\\Desktop\\aaaa.txt"));
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\项目\\springboot\\src\\main\\resources\\static\\newbatqyouhuaOCR.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\项目\\springboot\\src\\main\\resources\\static\\newbatqOCRsum.txt"));
       //  BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\aaaa2.txt"));
         double bdOCRGoodCount = 0;
         double alOCRGoodCount = 0;
@@ -99,8 +99,16 @@ public class SearchOCRState {
         }
 
         DecimalFormat decimalFormat = new DecimalFormat("00.00");
-        String accuracy = decimalFormat.format(bdOCRGoodCount/(bdOCRGoodCount + bdOCRErrorCount));
-        System.out.println("百度识别准确率 ： " + accuracy);
+        String baccuracy = decimalFormat.format(100*(bdOCRGoodCount/(bdOCRGoodCount + bdOCRErrorCount))) + "%";
+        String aaccuracy = decimalFormat.format(100*(alOCRGoodCount/(alOCRGoodCount + alOCRErrorCount))) + "%";
+        String taccuracy = decimalFormat.format(100*(txOCRGoodCount/(txOCRGoodCount + txOCRErrorCount))) + "%";
+        String qaccuracy = decimalFormat.format(100*(qnOCRGoodCount/(qnOCRGoodCount + qnOCRErrorCount))) + "%";
+
+        System.out.println("百度识别准确率 ： " + baccuracy);
+        System.out.println("阿里识别准确率 ： " + aaccuracy);
+        System.out.println("腾讯识别准确率 ： " + taccuracy);
+        System.out.println("全能识别准确率 ： " + qaccuracy);
+
         System.out.println("百度OCR优秀数量： " + bdOCRGoodCount);
         System.out.println("阿里OCR优秀数量： " + alOCRGoodCount);
         System.out.println("腾讯OCR优秀数量： " + txOCRGoodCount);

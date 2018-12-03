@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class FindCount {
     public static void main(String[] args) {
-        File file =new File("E:\\work\\表格梳理\\27\\mouse\\result_images");
+        File file =new File("E:\\work\\表格梳理\\2\\mouse\\result_images");
         File [] files =file.listFiles();
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         Map<String,Integer> map = new LinkedHashMap<>();

@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Demo {
     public static void main(String[] args) throws IOException {
-        String path = "C:\\Users\\Administrator\\Documents\\CoCall4\\16212@test\\recvfile\\金娟\\新处理图片文件";
+        String path = "E:\\work\\OCR\\1130\\aaa2";
         File file =new File(path);
         File[] files =file.listFiles();
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\BATQOCR原图20181130.txt"));

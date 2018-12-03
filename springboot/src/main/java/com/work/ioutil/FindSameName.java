@@ -30,6 +30,7 @@ public class FindSameName {
         try {
             File file = new File(path);
             inputStream = new FileInputStream(file);
+            System.out.println(file.getName());
             outputStream = new FileOutputStream(new File(resultPath + "\\"+file.getName()));
             byte [] buff = new byte[1024];
             int len =0;
