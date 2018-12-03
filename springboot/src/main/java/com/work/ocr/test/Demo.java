@@ -40,12 +40,22 @@ public class Demo {
                 /**
                  * 阿里OCR
                  */
-                String alOcr = ALYOCR.getMessage(ALYOCR.getBean(picturePath));
+                String alOcr = "";
 
+                try {
+                     alOcr = ALYOCR.getMessage(ALYOCR.getBean(picturePath));
+                }catch (Exception e){
+                    e.getMessage();
+                }
                 /**
                  * 腾讯OCR
                  */
-                String txOcr = TXOCR.getMessage(picturePath);
+                String txOcr = "";
+                try {
+                     txOcr = TXOCR.getMessage(picturePath);
+                }catch (Exception e){
+                    e.getMessage();
+                }
 
                 /**
                  * 全能扫描王OCR
