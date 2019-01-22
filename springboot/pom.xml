@@ -26,20 +26,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.libscanner</groupId>
-            <artifactId>libscanner</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/armeabi-v7a/libscanner.so</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.imagescannersdk_pr</groupId>
-            <artifactId>imagescannersdk_pr.jar</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/imagescannersdk_pr.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>org.json</groupId>
             <artifactId>org.json</artifactId>
             <version>chargebee-1.0</version>
@@ -84,7 +70,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.34</version>
+            <version>1.2.54</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>

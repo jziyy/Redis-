@@ -39,12 +39,17 @@ public class HttpUtil {
         URL url = new URL(generalUrl);
         // 打开和URL之间的连接
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        // 设定请求的方法为"POST"，默认是GET
         connection.setRequestMethod("POST");
         // 设置通用的请求属性
         connection.setRequestProperty("Content-Type", contentType);
         connection.setRequestProperty("Connection", "Keep-Alive");
+        // Post 请求不能使用缓存
         connection.setUseCaches(false);
+        // 设置是否向httpUrlConnection输出，因为这个是post请求，参数要放在
+        // http正文内，因此需要设为true, 默认情况下是false;
         connection.setDoOutput(true);
+        // 设置是否从httpUrlConnection读入，默认情况下是true;
         connection.setDoInput(true);
 
         // 得到请求的输出流对象

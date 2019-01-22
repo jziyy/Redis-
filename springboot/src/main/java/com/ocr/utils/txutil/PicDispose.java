@@ -32,7 +32,7 @@ public class PicDispose {
 
             long len =file.length()/1024;
 
-            newFilePath = "C:\\Users\\Administrator\\Desktop\\新建文件夹 (3)\\" + file.getName();
+            newFilePath = "C:\\Users\\Administrator\\Desktop\\新建文件夹 (5)\\" + file.getName();
 
             Thumbnails.of(picPath).scale(scale).toFile(newFilePath);
 

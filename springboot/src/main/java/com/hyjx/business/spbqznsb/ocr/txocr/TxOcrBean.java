@@ -1,4 +1,4 @@
-package com.ocr.ocrbeans.tx.beans;
+package com.hyjx.business.spbqznsb.ocr.txocr;
 
 public class TxOcrBean {
     private int code;

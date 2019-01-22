@@ -1,10 +1,8 @@
 package com.work.ocr.test;
 
-import com.ocr.utils.ALYOCR;
-import com.ocr.utils.Documentv2OCRRESTAPIDemo;
-import com.ocr.utils.General;
-import com.ocr.utils.TXOCR;
-import com.ocr.utils.txutil.PicDispose;
+import com.hyjx.business.spbqznsb.ocr.txocr.TXOCR;
+import com.ocr.utils.alutil.Documentv2OCRRESTAPIDemo;
+import com.ocr.utils.alutil.General;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,10 +11,10 @@ import java.io.IOException;
 
 public class Demo {
     public static void main(String[] args) throws IOException {
-        String path = "E:\\work\\OCR\\1130\\aaa2";
+        String path = "E:\\work\\OCR\\190103\\扶正后的照片";
         File file =new File(path);
         File[] files =file.listFiles();
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\BATQOCR原图20181130.txt"));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\20190109.txt"));
         for (int i = 0; i < files.length; i++) {
                 String picName = files[i].getName();
          //   for (int j = 0; j < 2; j++) {
@@ -28,7 +26,7 @@ public class Demo {
 //                }else {
 //                    picturePath = picturePath + "\\" + i + "q.jpg";
 //                }
-                picturePath = PicDispose.picDispose(picturePath);
+              //  picturePath = PicDispose.picDispose(picturePath);
 
                 /**
                  * 百度OCR
@@ -40,19 +38,19 @@ public class Demo {
                 /**
                  * 阿里OCR
                  */
-                String alOcr = "";
-
-                try {
-                     alOcr = ALYOCR.getMessage(ALYOCR.getBean(picturePath));
-                }catch (Exception e){
-                    e.getMessage();
-                }
+//                String alOcr = "";
+//
+//                try {
+//                     alOcr = ALYOCR.getMessage(ALYOCR.getBean(picturePath));
+//                }catch (Exception e){
+//                    e.getMessage();
+//                }
                 /**
                  * 腾讯OCR
                  */
                 String txOcr = "";
                 try {
-                     txOcr = TXOCR.getMessage(picturePath);
+                     txOcr = TXOCR.getMessage(TXOCR.getMessage(picturePath));
                 }catch (Exception e){
                     e.getMessage();
                 }
@@ -78,11 +76,11 @@ public class Demo {
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
 
-                System.out.println(alOcr);
-                bufferedWriter.write("alOcr: " + alOcr);
-                bufferedWriter.flush();
-                bufferedWriter.newLine();
-                bufferedWriter.flush();
+//                System.out.println(alOcr);
+//                bufferedWriter.write("alOcr: " + alOcr);
+//                bufferedWriter.flush();
+//                bufferedWriter.newLine();
+//                bufferedWriter.flush();
 
                 System.out.println(txOcr);
                 bufferedWriter.write("txOcr: " + txOcr);

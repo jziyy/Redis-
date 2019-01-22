@@ -1,9 +1,9 @@
 package com.ocr.test;
 
-import com.ocr.utils.ALYOCR;
-import com.ocr.utils.Documentv2OCRRESTAPIDemo;
-import com.ocr.utils.General;
-import com.ocr.utils.TXOCR;
+import com.hyjx.business.spbqznsb.ocr.txocr.TXOCR;
+import com.ocr.utils.alutil.ALYOCR;
+import com.ocr.utils.alutil.Documentv2OCRRESTAPIDemo;
+import com.ocr.utils.alutil.General;
 import com.ocr.utils.txutil.PicDispose;
 
 import java.io.BufferedWriter;
@@ -37,7 +37,7 @@ public class HyCompareBdTest {
             /**
              * 腾讯OCR
              */
-            String txOcr = TXOCR.getMessage(picturePath);
+            String txOcr = TXOCR.getMessage(TXOCR.getMessage(picturePath));
 
             /**
              * 全能扫描王OCR

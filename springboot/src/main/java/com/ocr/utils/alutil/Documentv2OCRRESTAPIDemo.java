@@ -1,15 +1,9 @@
-package com.ocr.utils;
+package com.ocr.utils.alutil;
 
 import com.alibaba.fastjson.JSON;
 import com.ocr.ocrbeans.hh.beans.beans.HHBean;
-import com.ocr.utils.txutil.PicDispose;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,7 +21,7 @@ public class Documentv2OCRRESTAPIDemo {
 			return  stringBuilder.toString();
 	}
 	public static String DocumentOCR(String filepath){
-		filepath = PicDispose.picDispose(filepath);
+//		filepath = PicDispose.picDispose(filepath);
 
 		try {
 			//filepath = "D:/java/6.jpg";

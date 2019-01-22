@@ -1,6 +1,4 @@
-package com.demo;
-
-import com.ocr.utils.txutil.Sign;
+package com.hyjx.business.spbqznsb.ocr.txocr;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -26,7 +24,7 @@ public class DemoHttpUtil {
            connection.setRequestProperty("Host","recognition.image.myqcloud.com");
            connection.setRequestProperty("Content-Type","application/json");
          //  connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-           connection.setRequestProperty("Authorization", Sign.appSign(1251608246,"AKIDBFLH2bWGb2JQM7owgEJG1b0JSPAkuORJ","0oU1QfkeMtGSUREqGVZTPAjRkxztdBYk","",10000));
+           connection.setRequestProperty("Authorization", Sign.appSign(1258482909,"AKIDSkx44GRbYJtiFboiz50SDA4TjroAcLnF","Pd6lG1oUDoFYu7FdwHSSm0CFAviPyxow","",10000));
            connection.connect();
 
            outputStream = connection.getOutputStream();

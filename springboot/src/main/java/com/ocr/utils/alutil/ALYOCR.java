@@ -1,10 +1,10 @@
-package com.ocr.utils;
+package com.ocr.utils.alutil;
 
 
-import com.ocr.ocrbeans.ali.beans.AlOcrBean;
 import com.baidu.aip.util.Base64Util;
 import com.google.gson.Gson;
-import com.ocr.utils.alutil.HttpUtils;
+import com.ocr.ocrbeans.ali.beans.AlOcrBean;
+import com.ocr.utils.FileUtil;
 import com.ocr.utils.txutil.PicDispose;
 import org.apache.http.HttpResponse;
 

@@ -6,9 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchOCRState {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) {
+        String path = "E:\\work\\OCR\\20190109";
+        File file = new File(path);
+        File [] files = file.listFiles();
+        for (int i = 0; i < files.length; i++) {
+            try {
+                System.out.println(files[i].getName());
+                SearchState(files[i].getAbsolutePath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public static void SearchState(String path) throws IOException {
       //  BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\Administrator\\Desktop\\aaaa.txt"));
-        BufferedReader bufferedReader = new BufferedReader(new FileReader("F:\\项目\\springboot\\src\\main\\resources\\static\\newbatqOCRsum.txt"));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
       //  BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\Administrator\\Desktop\\aaaa2.txt"));
         double bdOCRGoodCount = 0;
         double alOCRGoodCount = 0;

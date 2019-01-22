@@ -4,7 +4,7 @@ import java.io.File;
 
 public class ChangeName {
     public static void main(String[] args) {
-       String path = "E:\\work\\OCR\\demo1";
+       String path = "C:\\Users\\Administrator\\Documents\\CoCall4\\16212@test\\recvfile\\杨澜\\邵金智";
        changeName(path,"a");
     }
     public static void changeName(String filePath,String placeHolder){

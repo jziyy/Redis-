@@ -1,6 +1,6 @@
 package com.ocr.test;
 
-import com.ocr.utils.Documentv2OCRRESTAPIDemo;
+import com.ocr.utils.alutil.Documentv2OCRRESTAPIDemo;
 
 import java.io.*;
 
